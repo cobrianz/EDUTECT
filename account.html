@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduka</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background: #ebedf1;">
+    <nav style="padding: 3rem;">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo.png" alt="">
+                </a>
+                <div class="nav_details">
+                    <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                    <span>Menu</span>
+                </div>
+            </div>
+    </nav>
+
+    <div class="account__hero container">
+        <aside>
+            <h3>Personal Profile</h3>
+            <div class="account__user">
+
+                <img src="./assets/avatar2.jpg" alt="">
+                <span>
+                    <h4>Braison Wabwire</h4>
+                    <p>braisonwabwire@gmail.com</p>
+                </span>
+            </div>
+            <span class="aside__span">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <p>Personal Information</p>
+            </span>
+            <span class="aside__span">
+                <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                <p>Upgrade</p>
+            </span>
+            <span class="aside__span">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <p style="text-decoration: line-through;">Courses</p>
+            </span>
+            <span class="aside__span">
+                <i class="fa fa-sign-out" aria-hidden="true" style="color: red;"></i>
+                <p><a href="./index.html" style="color: #c27272;">Logout</a></p>
+            </span>
+        </aside>
+
+        <main>
+            <div id="main" class="main Personal__information">
+                <div class="signup__form-container">
+                    <div class="form">
+                        <h3>Personal Information</h3>
+                        <form action="#" method="POST">
+                            <label for="email">Email Address *</label>
+                            <input type="email" value="" placeholder="braisonwabwire@gmail.com">
+                            <label for="name">Name *</label>
+                            <input type="text" value="" placeholder="Braison Wabwire">
+                            <p>update you password details below.</p>
+                            <label id="passcode" class="passcode" for="password">Password *</label>
+                            <input id="passcode" class="passcode" type="password" value="" placeholder="••••••••">
+                            <button type="submit" class="btn" name="">Update Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="main plan__info">
+                <h3 style="color: #6a5acd;">Premiumim Plan</h3>
+                <div class="plan">
+                    <h4>Mpesa</h4>
+                    <p>Ksh. 3,000</p>
+                    <form action="#">
+                        <input type="number" placeholder="Enter Amount To pay">
+                        <button type="submit" class="btn" name="">Pay</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const asideSpans = document.querySelectorAll('.aside__span');
+            const mainSections = document.querySelectorAll('.main');
+            const viewOrderLinks = document.querySelectorAll('.my__orders a');
+            const openMenu = document.querySelector('.fa-bars');
+            const closeMenu = document.querySelector('.fa-times');
+            const menu = document.querySelector('ul');
+
+
+            // Function to remove 'active-aside__span' class from all spans
+            const removeActiveClass = () => {
+                asideSpans.forEach(s => s.classList.remove('active-aside__span'));
+            };
+
+            asideSpans.forEach((span, index) => {
+                span.addEventListener('click', () => {
+                    removeActiveClass();
+                    span.classList.add('active-aside__span');
+                    mainSections.forEach(section => section.style.display = 'none');
+                    mainSections[index].style.display = 'block';
+                });
+            });
+
+            viewOrderLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    removeActiveClass();
+                    mainSections.forEach(section => section.style.display = 'none');
+                    const orderDetailsIndex = mainSections.length - 1; // Assuming order details is the last section
+                    mainSections[orderDetailsIndex].style.display = 'block';
+                });
+            });
+
+            // Set default open section (Personal Information)
+            const defaultSectionIndex = 0;
+            asideSpans[defaultSectionIndex].classList.add('active-aside__span');
+            mainSections.forEach((section, index) => {
+                section.style.display = index === defaultSectionIndex ? 'block' : 'none';
+            });
+
+
+            openMenu.addEventListener('click', () => {
+                menu.style.display = 'flex';
+                openMenu.style.display = 'none';
+                closeMenu.style.display = 'flex';
+
+            });
+
+            closeMenu.addEventListener('click', () => {
+                menu.style.display = 'none';
+                openMenu.style.display = 'flex';
+                closeMenu.style.display = 'none';
+
+            });
+
+            //Shop aside javascript
+
+            const asideToggler = document.querySelector('.aside__toggler');
+            const aside = document.querySelector('.shop__aside');
+
+            asideToggler.addEventListener('click', () => {
+                aside.classList.toggle('shop__aside-active');
+            });
+            ;
+
+        });
+    </script>
+</body>
+
+</html>

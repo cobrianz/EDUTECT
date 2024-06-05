@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUTECH</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="hero">
+        <div class="container">
+            <nav>
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./assets/logo.png" alt="">
+                        </a>                        <div class="nav_details">
+                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <span>Menu</span>
+                        </div>
+                    </div>
+
+                    <div class="nav__center">
+                        <a href="./learn.html">Learn</a>
+                        <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                        <a href="#about">About us</a>
+                    </div>
+
+                    <div class="nav__right">
+                        <div class="user">
+                            <a href="./login.html" onclick="account(event)"><span><i class="fa fa-user-o"
+                                        aria-hidden="true"></i></span></a>
+                        </div>
+                        <div class="code"><i class="fa fa-code" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero__section container">
+            <div class="form-container">
+                <div class="form-image">
+                    <h2>Welcome Back. Consistency & Determination</h2>
+                </div>
+                <div class="form-box">
+                    <h1>Login</h1>
+                    <form action="#">
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="form-btn">Login</button>
+                        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
