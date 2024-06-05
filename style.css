@@ -893,6 +893,11 @@ video {
         width: 100%;
     }
 
+    .hero {
+        background: red;
+        padding-bottom: 3rem;
+    }
+
     nav {
         padding-top: 0;
     }
