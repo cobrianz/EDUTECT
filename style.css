@@ -113,8 +113,7 @@ nav {
 .hero__section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
+    justify-content: center;
    /*  position: absolute;
     top: 50%;
     left: 50%;
