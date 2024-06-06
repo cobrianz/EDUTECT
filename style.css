@@ -599,18 +599,25 @@ ACCOUNT SECTION
 
 .account__hero {
     display: flex;
-    width: 100%;
     gap: 8rem;
     background: #f1f1f1;
     min-height: 60vh;
     padding: 4rem;
-    position: absolute;
+/*     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    
 }
 
-aside {
+.profile_image {
+    width: 2rem;
+    border-radius: 50%;
+    padding: 2px;
+    background: #6a5acd;
+}
+
+.account__hero aside {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -638,6 +645,8 @@ aside {
 
 main {
     width: 100%;
+    display: flex;
+    align-items: flex-start;
 }
 
 .main .form {
@@ -658,10 +667,16 @@ main {
     width: 100%;
 }
 
+label {
+    font-size: 14px;
+    color: #474747;
+}
+
 .form form input {
     background: #edf2f8;
     padding: .8rem;
     width: 100%;
+    min-width: 300px;
     border: 1px solid #dad7d7;
     border-radius: 8px;
 }
@@ -724,6 +739,8 @@ main {
 .plan form button:hover {
     background: #a68af5;
 }
+
+
 
 
 /* LEARN SECTION */
@@ -1041,6 +1058,77 @@ video {
         align-items: center;
         justify-content: center;
         flex-direction: column-reverse;
+    }
+
+    .account__hero {
+        width: 100%;
+        margin-top: 3rem;
+        flex-direction: column-reverse;
+
+    }
+
+    
+    .account__hero aside {
+        /*        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 65vh;
+        padding: 2rem;
+        width: 90%;
+        margin: 0 auto;
+        background: #fff; */
+    }
+    
+    .account__hero aside {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;    
+        align-items: center;
+        width: 100%;
+        justify-content: center; 
+        gap: 5rem;
+        background: #d8caff;
+        padding: 1rem 4rem 1rem 1rem;
+    }
+
+    .aside__span {
+        margin-bottom: 2rem;
+    }
+
+    .update {
+        width: 60vw;
+    }
+
+
+    .aside__span p {
+        display: none;
+    }
+
+    .aside__span i {
+        color: #ffffff;
+        position: absolute;
+        top: -1rem;
+        padding: .6rem;
+        background: #836dc2;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        font-size: 12px;
+    }
+    .account__hero h3{
+        display: none;
+    }
+    
+    .account__user {
+        display: none;
+    }
+
+    .plan__info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
 }

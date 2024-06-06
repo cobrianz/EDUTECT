@@ -7,10 +7,25 @@
     <title>Eduka</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <style>
+        nav {
+            padding: 3rem;
+
+        }
+
+        @media only screen and (max-width: 800px) {
+            nav {
+                padding: 0;
+            }
+            .nav_details {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body style="background: #ebedf1;">
-    <nav style="padding: 3rem;">
+    <nav>
         <div class="navbar">
             <div class="logo">
                 <a href="index.html">
@@ -21,6 +36,12 @@
                     <span>Menu</span>
                 </div>
             </div>
+            <div class="nav__right"
+                style="border: none; display: flex; align-items: center; gap: 1rem; justify-content: center;">
+                <img src="./assets/avatar2.jpg" class="profile_image" alt="">
+                </a>
+            </div>
+        </div>
     </nav>
 
     <div class="account__hero container">
@@ -62,7 +83,7 @@
                             <input type="email" value="" placeholder="braisonwabwire@gmail.com">
                             <label for="name">Name *</label>
                             <input type="text" value="" placeholder="Braison Wabwire">
-                            <p>update you password details below.</p>
+                            <p class="update">update you password details below.</p>
                             <label id="passcode" class="passcode" for="password">Password *</label>
                             <input id="passcode" class="passcode" type="password" value="" placeholder="••••••••">
                             <button type="submit" class="btn" name="">Update Account</button>
