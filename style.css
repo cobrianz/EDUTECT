@@ -22,6 +22,7 @@ a{
 input{
     border: none;
     outline: none;
+    min-width: 300px;
 }
 
 li{
@@ -543,7 +544,6 @@ nav {
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
-    min-width: 200px;
 }
 
 .input-group input:focus {
@@ -685,7 +685,6 @@ label {
     background: #edf2f8;
     padding: .8rem;
     width: 100%;
-    min-width: 200px;
     border: 1px solid #dad7d7;
     border-radius: 8px;
 }
@@ -1185,4 +1184,10 @@ video {
     left: 0;
     transition: transform 0.5s linear;
    }
+}
+
+@media only screen and (max-width: 350px) {
+    .form-container {
+        margin: 6rem 0;
+    }
 }
