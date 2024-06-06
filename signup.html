@@ -7,34 +7,36 @@
     <title>EDUTECH</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-
+    <style>
+         @media only screen and (max-width: 800px) {
+           .form-container {
+            margin-top: 0;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+           }
+           .form-image img {
+                width: initial;
+                display: none;
+            }
+            .form-box {
+                margin-top: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="hero">
+    <div class="hero" style="background: #fff;">
         <div class="container">
             <nav>
                 <div class="navbar">
                     <div class="logo">
                         <a href="index.html">
                             <img src="./assets/logo.png" alt="">
-                        </a>                        <div class="nav_details">
-                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        </a><div class="nav_details">
                             <span>Menu</span>
                         </div>
-                    </div>
-
-                    <div class="nav__center">
-                        <a href="./learn.html">Learn</a>
-                        <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                        <a href="#about">About us</a>
-                    </div>
-
-                    <div class="nav__right">
-                        <div class="user">
-                            <a href="./login.html" onclick="account(event)"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
-                        </div>
-                        <div class="code"><i class="fa fa-code" aria-hidden="true"></i></div>
                     </div>
                 </div>
             </nav>
@@ -42,29 +44,33 @@
         <div class="hero__section container">
             <div class="form-container">
                 <div class="form-image">
-                    <h2>Thanks for choosing us, You'll never regret.</h2>
+                    <img src="./assets/logout.avif" alt="">
                 </div>
                 <div class="form-box">
-                    <h1>Sign Up</h1>
+                    <h2>Welcome, Create Account</h2>
                     <form action="#">
                         <div class="input-group">
-                            <label for="username">Username</label>
+                            <label for="username">Username *</label>
                             <input type="text" id="username" name="username" required>
                         </div>
                         <div class="input-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="input-group">
-                            <label for="password">Password</label>
+                            <label for="password">Password *</label>
                             <input type="password" id="password" name="password" required>
                         </div>
                         <div class="input-group">
-                            <label for="confirm-password">Confirm Password</label>
+                            <label for="confirm-password">Confirm Password *</label>
                             <input type="password" id="confirm-password" name="confirm-password" required>
                         </div>
+                        <div class="input-group">
+                            <label for="confirm-password">Avatar *</label>
+                            <input type="file" id="avatar" name="avatar" required style="border: none; color: slateblue;">
+                        </div>
                         <button type="submit" class="form-btn">Sign Up</button>
-                        <p>Already have an account? <a href="login.html">Login</a></p>
+                        <p style="text-align: left;">Already have an account? <a href="login.html">Login</a></p>
                     </form>
                 </div>
             </div>

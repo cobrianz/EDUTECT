@@ -7,11 +7,23 @@
     <title>EDUTECH</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-
+    <style>
+        @media only screen and (max-width: 800px) {
+          .form-container {
+           margin-top: -3rem;
+           border-radius: 0;
+           border: none;
+           box-shadow: none;
+          }
+          .form-image img {
+               width: initial;
+           }
+       }
+   </style>
 </head>
 
-<body>
-    <div class="hero">
+<body >
+    <div class="hero" style="background: #fff;">
         <div class="container">
             <nav>
                 <div class="navbar">
@@ -43,10 +55,10 @@
         <div class="hero__section container">
             <div class="form-container">
                 <div class="form-image">
-                    <h2>Welcome Back. Consistency & Determination</h2>
+                    <img src="./assets/login.png" alt="">
                 </div>
                 <div class="form-box">
-                    <h1>Login</h1>
+                    <h2>Welcome Back</h2>
                     <form action="#">
                         <div class="input-group">
                             <label for="email">Email</label>

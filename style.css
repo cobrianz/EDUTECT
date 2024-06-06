@@ -475,9 +475,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(145deg, #9c81e6, #836dc2);
+    background: #fff;
     width: 100%;
-    height: 100%;
     max-width: 1000px;
     margin: 0 auto;
     box-shadow: 0 0 1px 0 #1f26875e;
@@ -486,6 +485,10 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.5s ease-in;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .form-image {
@@ -494,31 +497,32 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    border-right: 1px solid #7e68b9;
+
 }
 
-.form-image h2 {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 3rem;
-    color: #fff;
-
+.form-image img {
+    width: 90%;
+    height: 90%;
 }
 
 .form-box {
     flex: 1;
     background: #fff;
-    background: #fff;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
 }
 
-h1 {
+.form-container h2{
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #474747;
+    font-size: 1.4rem;
+    color: #6a5acd;
 }
 
 .input-group {
@@ -533,11 +537,12 @@ h1 {
 }
 
 .input-group input {
-    width: 100%;
-    padding: 0.75rem;
+    width: 80%;
+    padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
+    min-width: 200px;
 }
 
 .input-group input:focus {
@@ -546,14 +551,14 @@ h1 {
 
 .form-btn {
     width: 100%;
-    padding: 1rem;
+    padding: .5rem;
+    width: fit-content;
     border: none;
     border-radius: 5px;
     background: linear-gradient(145deg, #9c81e6, #836dc2);
     color: #fff;
-    font-size: 1rem;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .form-btn:hover {
