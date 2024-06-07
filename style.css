@@ -1156,6 +1156,11 @@ video {
         font-size: 14px;
     }
 
+    .video {
+        width: 100%;
+        padding: 1rem;
+    }
+
     .video h2 {
         font-size: 1rem;
     }
