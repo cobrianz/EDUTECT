@@ -1145,6 +1145,26 @@ video {
         display: none;
     }
 
+    .Personal__information {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup__form-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup__form-container .form {
+        width: 100%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
     .plan__info {
         position: absolute;
         top: 50%;

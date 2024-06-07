@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDYGHOST ADMIN DASHBOARD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="">
+                   <a href="../index.html"><h2>STUDY<span class="danger">GHOST</span></h2></a> 
+                    <div class="close" id="close-btn"><span><i class="fa fa-times"></i></span></div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html" class="active">
+                    <span><i class="fa fa-th-large" aria-hidden="true"></i></span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="student.html">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+
+                    <h3>Students</h3>
+                </a>
+                <a href="order.html">
+                    <span><i class="fa fa-clipboard" aria-hidden="true"></i></span>
+
+                    <h3>Orders</h3>
+                </a>
+                <a href="analytics.html">
+                    <span> <i class="fa fa-line-chart" aria-hidden="true"></i></span>
+
+                    <h3>Analytics</h3>
+                </a>
+                <a href="message.html">
+                    <span> <i class="fa fa-envelope-open" aria-hidden="true"></i></span>
+
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+
+                    <h3>Tutors</h3>
+                </a>
+                <a href="#">
+                    <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span> <i class="fa fa-cogs" aria-hidden="true"></i></span>
+
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+
+                    <h3>Add Tutors</h3>
+                </a>
+                <a href="./login.html">
+                    <span><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- main -->
+        <main>
+            <h1>Dashboard</h1>
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span>
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Orders</h3>
+                            <h1>$25,098</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <!-- end of sales -->
+                <div class="expenses">
+                    <span>
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Tutors Expenses</h3>
+                            <h1>$14,160</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <!-- end of Expenses -->
+                <div class="income">
+                    <span>
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total income</h3>
+                            <h1>$10,864</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <!-- end of income -->
+            </div>
+            <!-- end of insights -->
+            <div class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order Name</th>
+                            <th>Order Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!--     <tr>
+                            <td>Nursing Research Paper</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warninng">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        -->
+                </table>
+                <a href="#">Show All</a>
+            </div>
+        </main>
+
+        <!-- end of main -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span>
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="active"><i class="fa fa-sun" aria-hidden="true"></i>
+                    </span>
+                    <span><i class="fa fa-moon" aria-hidden="true"></i></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Brian</b></p>
+                        <small class="text-muted">
+                            Admin
+                        </small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- end of top -->
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile-2.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Brian Cheruiyot</b> Received his order of Computer science Java programming</p>
+                            <small class="text-muted">2 minutes ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile-3.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Cyrus Cheruiyot</b> Received his order of Computer science CSS programming</p>
+                            <small class="text-muted">5 minutes ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile-4.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Maureen Cheruiyot</b> Received his order of Computer science C programming</p>
+                            <small class="text-muted">8 minutes ago</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Recent Updates -->
+
+                <div class="sales-analytics">
+                    <h2>Users Analytics</h2>
+                    <div class="item online">
+                        <div class="icon">
+                            <span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>NEW ORDERS</h3>
+                                <small class="text-muted">Last 24hrs</small>
+                            </div>
+                            <h5 class="success">+39%</h5>
+                            <h3>3849</h3>
+                        </div>
+                    </div>
+                    <div class="item offline">
+                        <div class="icon">
+                            <span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>COMPLETED ORDERS</h3>
+                                <small class="text-muted">Last 24hrs</small>
+                            </div>
+                            <h5 class="success">+17%</h5>
+                            <h3>1100</h3>
+                        </div>
+                    </div>
+                    <div class="item customers">
+                        <div class="icon">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>NEW STUDENTS</h3>
+                                <small class="text-muted">Last 24hrs</small>
+                            </div>
+                            <h5 class="success">+25%</h5>
+                            <h3>849</h3>
+                        </div>
+                    </div>
+                    <div class="item offline">
+                        <div class="icon">
+                            <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>INCOMPLETE ORDERS</h3>
+                                <small class="text-muted">Last 24hrs</small>
+                            </div>
+                            <h5 class="danger">-14%</h5>
+                            <h3>849</h3>
+                        </div>
+                    </div>
+                    <div class="item online">
+                        <div class="icon">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>NEW TUTORS</h3>
+                                <small class="text-muted">Last 24hrs</small>
+                            </div>
+                            <h5 class="success">+25%</h5>
+                            <h3>849</h3>
+                        </div>
+                    </div>
+                    <div class="item add-product">
+                        <div><span><i class="fa fa-plus" aria-hidden="true"></i></span></div>
+                        <h3>Add Tutors</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./orders.js"></script>
+    <script src="./index.js"></script>
+</body>
+<!-- copyright @Briankipkemoi
+ CREATED AND ONWNED BY BRIAN KIPKEMOI CHERUIYOT
+ -->
+</html>
