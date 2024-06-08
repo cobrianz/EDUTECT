@@ -1085,6 +1085,7 @@ video {
         width: 100%;
         margin-top: 3rem;
         flex-direction: column-reverse;
+        background: #d5e0ee;
 
     }
 
@@ -1110,7 +1111,6 @@ video {
         width: 100%;
         justify-content: center; 
         gap: 5rem;
-        background: ;
         padding: 1rem 4rem 1rem 1rem;
     }
 
