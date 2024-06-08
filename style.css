@@ -1089,19 +1089,6 @@ video {
 
     }
 
-    
-    .account__hero aside {
-        /*        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        min-height: 65vh;
-        padding: 2rem;
-        width: 90%;
-        margin: 0 auto;
-        background: #fff; */
-    }
-    
     .account__hero aside {
         position: absolute;
         bottom: 0;
