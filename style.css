@@ -1,11 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
 
+}
+
+.alert__message {
+    width: 100%;
+    padding: .5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.error {
+    background: #df9f9f;
+}
+
+.success {
+    background: #83d487;
 }
 
 
@@ -15,27 +31,30 @@
     background-color: #edf2f8;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-input{
+input {
     border: none;
     outline: none;
+    width: 100%;
     min-width: 300px;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.container{
+.container {
     width: 94vw;
     margin: 0 auto;
 }
+
 nav {
     padding-top: 4rem;
 }
+
 .navbar {
     background-color: #e5ebf3;
     border-radius: 1rem;
@@ -52,7 +71,7 @@ nav {
     gap: 2rem;
 }
 
-.logo  img{
+.logo img {
     width: 4rem;
 }
 
@@ -84,7 +103,7 @@ nav {
     text-decoration: underline;
 }
 
-.nav__center:nth-child(2){
+.nav__center:nth-child(2) {
     font-size: 8px;
 }
 
@@ -117,7 +136,7 @@ nav {
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
-   /*  position: absolute;
+    /*  position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -137,7 +156,7 @@ nav {
     text-align: left;
 }
 
-.hero__right h3{
+.hero__right h3 {
     font-size: 4rem;
     font-weight: lighter;
 }
@@ -146,7 +165,7 @@ nav {
     font-size: 1.2rem;
 }
 
-.btns{
+.btns {
     display: flex;
     gap: 2rem;
     width: fit-content;
@@ -158,21 +177,21 @@ nav {
     color: #fff;
     border-radius: 47px;
     background: linear-gradient(145deg, #9c81e6, #836dc2);
-    box-shadow:  2px 2px 2px #7e68b9,
-                -2px -2px 2px #a68af5;
+    box-shadow: 2px 2px 2px #7e68b9,
+        -2px -2px 2px #a68af5;
 }
 
 .btns a:last-child {
     color: #000;
     border-radius: 47px;
     background: linear-gradient(145deg, #e1e1e1, #ffffff);
-    box-shadow:  11px 11px 22px #d7d7d7,
-                -11px -11px 22px #ffffff;
+    box-shadow: 11px 11px 22px #d7d7d7,
+        -11px -11px 22px #ffffff;
 }
 
 .btns a:hover {
     scale: 1.05;
-    transition:  all 400ms ease;
+    transition: all 400ms ease;
 }
 
 .hero__left {
@@ -187,7 +206,7 @@ nav {
 }
 
 .hero__bottom {
- /*    position: absolute;
+    /*    position: absolute;
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -224,19 +243,19 @@ nav {
 }
 
 
-.title{
+.title {
     width: fit-content;
     margin: auto;
     padding: 2rem;
     text-align: center;
 }
 
-.title small{
+.title small {
     font-size: 1.2rem;
 
 }
 
-.title h3{
+.title h3 {
     font-size: 1.5rem;
     padding: 12px;
 }
@@ -248,8 +267,9 @@ nav {
     gap: 3rem;
     margin: 3rem auto;
 }
-.about{
-    width: 20rem;    
+
+.about {
+    width: 20rem;
 }
 
 .about p {
@@ -259,7 +279,7 @@ nav {
 
 }
 
-.about-image{
+.about-image {
     width: 20rem;
     background-color: #000;
     height: 400px;
@@ -270,19 +290,22 @@ nav {
 }
 
 
-.image0{
+.image0 {
     background-image: url(./assets/1.png);
 
 }
-.image1{
+
+.image1 {
     background-image: url(./assets/hero.webp);
 
 }
-.image2{
+
+.image2 {
     background-image: url(./assets/2.png);
 
 }
-.image3{
+
+.image3 {
     background-image: url(./assets/3.png);
 
 }
@@ -299,7 +322,7 @@ nav {
     flex-direction: column;
     color: #000;
 }
-    
+
 
 .testimonial-container {
     display: flex;
@@ -309,7 +332,7 @@ nav {
 }
 
 .testimonial-slide {
-    background:#edf2f8;
+    background: #edf2f8;
     padding: 1rem;
     text-align: center;
     border-radius: 1rem;
@@ -334,7 +357,7 @@ nav {
 
 /* SUBSCRIPTION */
 
-.subscription{
+.subscription {
     padding: 2rem;
     margin-top: 4rem;
     background: #edf2f8;
@@ -343,7 +366,8 @@ nav {
 
 .subscription-card {
     width: 450px;
-    background-color: #fff; /* Dark card background */
+    background-color: #fff;
+    /* Dark card background */
     padding: 20px;
     text-align: center;
     color: #000;
@@ -351,8 +375,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur( 5px );
-    -webkit-backdrop-filter: blur( 5px );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
     border: 1px solid #ffffff2e;
 }
@@ -360,7 +384,8 @@ nav {
 
 
 .subscription-card h1 {
-    color: #d134ff; /* Bright pink color */
+    color: #d134ff;
+    /* Bright pink color */
     font-size: 36px;
     margin: 0;
     padding: 0;
@@ -376,7 +401,7 @@ nav {
     padding: 0;
     margin-bottom: 1rem;
     text-align: left;
-  
+
 }
 
 .subscription-card ul li {
@@ -389,12 +414,14 @@ nav {
 
 .subscription-card ul li:before {
     content: '✓';
-    color: #6cdb7c; /* Green check mark */
+    color: #6cdb7c;
+    /* Green check mark */
     margin-right: 10px;
 }
 
 .subscription-card .subscribe-button {
-    background-color: #d134ff; /* Bright pink button */
+    background-color: #d134ff;
+    /* Bright pink button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -407,7 +434,8 @@ nav {
 }
 
 .subscription-card .subscribe-button:hover {
-    background-color: #b029cc; /* Darker pink on hover */
+    background-color: #b029cc;
+    /* Darker pink on hover */
 }
 
 .subscription-card .cancel-info {
@@ -418,8 +446,8 @@ nav {
 
 /* FOOTER */
 
-.footer { 
-    background-color: #0b0f19; 
+.footer {
+    background-color: #0b0f19;
     padding: 50px;
     color: white;
     text-align: center;
@@ -499,7 +527,7 @@ nav {
     align-items: center;
     text-align: center;
     border-right: 1px solid #7e68b9;
-    
+
 }
 
 .form-image img {
@@ -508,9 +536,9 @@ nav {
 }
 
 .form-box {
-    flex: 1;
+    width: 50%;
     background: #fff;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 0 10px 10px 0;
     display: flex;
     border-left: 1px solid #7e68b9;
@@ -520,7 +548,11 @@ nav {
 
 }
 
-.form-container h2{
+.form-box form {
+    width: 100%;
+}
+
+.form-container h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.4rem;
@@ -529,6 +561,7 @@ nav {
 
 .input-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .input-group label {
@@ -539,8 +572,8 @@ nav {
 }
 
 .input-group input {
-    width: 80%;
-    padding: 0.5rem;
+    width: 100%;
+    padding: .8rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
@@ -586,7 +619,8 @@ p a:hover {
         flex-direction: column;
     }
 
-    .form-image, .form-box {
+    .form-image,
+    .form-box {
         width: 100%;
     }
 
@@ -609,15 +643,15 @@ ACCOUNT SECTION
     background: #f1f1f1;
     min-height: 60vh;
     padding: 4rem;
-/*     position: absolute;
+    /*     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    
+
 }
 
 .profile_image {
-    width: 2rem;
+    width: 3rem;
     border-radius: 50%;
     padding: 2px;
     background: #6a5acd;
@@ -665,7 +699,7 @@ main {
     width: fit-content;
 }
 
-.main .form h3{
+.main .form h3 {
     color: #6a5acd;
 }
 
@@ -692,7 +726,7 @@ label {
 .form form button {
     background: #6a5acd;
     color: #fff;
-    padding:.5rem;
+    padding: .5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -706,11 +740,11 @@ label {
 }
 
 
-.plan__info h3{
-  margin-bottom: 2rem;
+.plan__info h3 {
+    margin-bottom: 2rem;
 }
 
-.plan{
+.plan {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -737,7 +771,7 @@ label {
     background: #6a5acd;
     width: fit-content;
     color: #fff;
-    padding:.5rem 3rem;
+    padding: .5rem 3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -758,6 +792,7 @@ label {
     align-items: center;
     justify-content: center;
 }
+
 .learn {
     display: flex;
     padding: 3rem;
@@ -780,7 +815,7 @@ label {
 }
 
 .course {
-    background: #edf2f8; 
+    background: #edf2f8;
     min-height: 60vh;
 
 }
@@ -795,7 +830,7 @@ label {
     margin: 0 auto;
 }
 
-.topic h4{
+.topic h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -808,6 +843,7 @@ label {
     color: #6a5acd;
     transition: all 0.3s ease;
 }
+
 .topic h3 {
     cursor: pointer;
     letter-spacing: 1.5px;
@@ -835,7 +871,7 @@ label {
     color: #fff;
 }
 
-.subtopics li:last-child  {
+.subtopics li:last-child {
     border-bottom: none;
 }
 
@@ -854,7 +890,7 @@ label {
 .video {
     display: flex;
     flex-direction: column;
-    gap: 1rem;   
+    gap: 1rem;
 }
 
 .video h2 {
@@ -935,8 +971,9 @@ video {
     display: block;
 }
 
-@media only screen and (max-width: 800px) {
-    .container{
+
+@media only screen and (max-width: 1000px) {
+    .container {
         width: 100%;
     }
 
@@ -949,21 +986,21 @@ video {
     }
 
     .navbar {
-        border-radius: 0;  
+        border-radius: 0;
     }
 
     .logo {
         gap: 1rem;
     }
 
-    .logo  img{
+    .logo img {
         width: 3rem;
     }
 
     .nav_details span:last-child {
         display: none;
     }
-    
+
     .nav__center {
         display: none;
     }
@@ -972,12 +1009,13 @@ video {
         width: 6rem;
         padding: .5rem;
     }
-    
+
     .hero__section {
         width: 100%;
         flex-direction: column;
-        align-items: flex-start;   
-        margin-top: 2rem;     
+        align-items: flex-start;
+        margin-top: 2rem;
+        text-align: center;
     }
 
     .hero__right {
@@ -987,9 +1025,10 @@ video {
 
     .hero__right p {
         font-size: 1rem;
+        text-align: center;
     }
 
-    .hero__right h3{
+    .hero__right h3 {
         font-size: 2.5rem;
         margin: 0 auto;
         width: fit-content;
@@ -999,6 +1038,7 @@ video {
 
     .hero__right small {
         font-size: 1rem;
+        text-align: center;
     }
 
     .btns {
@@ -1006,7 +1046,7 @@ video {
         margin: 0 auto;
         gap: 1rem;
     }
-    
+
     .btns a {
         padding: 4px 12px;
     }
@@ -1031,11 +1071,12 @@ video {
         align-items: center;
 
     }
+
     .hero__bottom-item img {
         display: none;
     }
 
-    .hero__bottom-item span{
+    .hero__bottom-item span {
         font-size: 12px;
     }
 
@@ -1051,7 +1092,8 @@ video {
     .title {
         padding: 1rem;
     }
-    .title h1{
+
+    .title h1 {
         font-size: 1.5rem;
         color: #7e68b9;
     }
@@ -1064,7 +1106,7 @@ video {
     .subscription-card h1 {
         font-size: 1.5rem;
     }
-    
+
     .subscription-card ul li {
         font-size: 16px;
     }
@@ -1093,10 +1135,10 @@ video {
         position: absolute;
         bottom: 0;
         left: 0;
-        flex-direction: row;    
+        flex-direction: row;
         align-items: center;
         width: 100%;
-        justify-content: center; 
+        justify-content: center;
         gap: 5rem;
         padding: 1rem 4rem 1rem 1rem;
     }
@@ -1124,14 +1166,17 @@ video {
         border: 1px solid #6a5acd;
         font-size: 12px;
     }
-    .account__hero h3{
+
+    .account__hero h3 {
         display: none;
     }
-    
+
     .account__user {
         display: none;
     }
 
+
+ 
     .Personal__information {
         width: 100%;
         display: flex;
@@ -1171,7 +1216,9 @@ video {
         transform: translate(-50%, -50%);
     }
 
-    .learn{
+    
+
+    .learn {
         width: 100%;
         padding: 0;
     }
@@ -1207,17 +1254,19 @@ video {
         font-size: 1rem;
     }
 
-    .notes .about p,  .notes ul li {
+    .notes .about p,
+    .notes ul li {
         font-size: 14px;
         letter-spacing: .5px;
     }
-   #courseOutline {
-    position: absolute;
-    background: #ffffff;
-    z-index: 1;
-    left: 0;
-    transition: transform 0.5s linear;
-   }
+
+    #courseOutline {
+        position: absolute;
+        background: #ffffff;
+        z-index: 1;
+        left: 0;
+        transition: transform 0.5s linear;
+    }
 }
 
 @media only screen and (max-width: 400px) {

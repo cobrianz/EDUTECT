@@ -16,7 +16,7 @@
             <nav>
                 <div class="navbar">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="./assets/logo.png" alt="">
                         </a>
                         <div class="nav_details">
@@ -26,14 +26,14 @@
                     </div>
 
                     <div class="nav__center">
-                        <a href="./learn.html">Learn</a>
+                        <a href="./learn.php">Learn</a>
                         <span><i class="fa fa-circle" aria-hidden="true"></i></span>
                         <a href="#about">About us</a>
                     </div>
 
                     <div class="nav__right">
                         <div class="user">
-                            <a href="./login.html"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
+                            <a href="./login.php"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
                         </div>
                         <div><i class="fa fa-code" aria-hidden="true"></i></div>
                     </div>
@@ -46,7 +46,7 @@
                 <h3>NEXT GENERATION CODING JOURNEY STARTS HERE.</h3>
                 <small>Boost your child's skills by accelerating his career with us.</small>
                 <div class="btns">
-                    <a href="./login.html">Get started</a>
+                    <a href="./login.php">Get started</a>
                     <a href="#about">why us</a>
                 </div>
             </div>
@@ -189,8 +189,8 @@
             <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
         <div class="right">
-            <a href="./terms.html">Terms of Use</a>
-            <a href="./terms.html">Privacy Policy</a>
+            <a href="./terms.php">Terms of Use</a>
+            <a href="./terms.php">Privacy Policy</a>
         </div>
     </div>
 

@@ -27,7 +27,7 @@
         <nav style="margin: 0; padding: 0; border-radius: none;">
             <div class="navbar">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="./assets/logo.png" alt="">
                     </a>
                     <div class="nav_details" onclick="toggleAside()">
@@ -38,7 +38,7 @@
 
                 <div class="nav__right">
                     <div class="user">
-                        <a href="./account.html"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
+                        <a href="./account.php"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
                     </div>
                     <div><i class="fa fa-code" aria-hidden="true"></i></div>
                 </div>
