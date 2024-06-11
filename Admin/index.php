@@ -2,6 +2,8 @@
 require 'config/database.php';
 if (!isset($_SESSION['admin-id'])) {
     header('Location:' . ROOT_URL . 'login.php');
+    $_SESSION['login'] = "You must be logged in to access this page.";
+    exit();
 }
 ?>
 
@@ -17,7 +19,7 @@ if (!isset($_SESSION['admin-id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -65,7 +67,7 @@ if (!isset($_SESSION['admin-id'])) {
         </aside>
 
         <!-- main -->
-        <main>
+        <main class="content-container">
             <div id="dashboard-content" class="content-section">
                 <h1>Dashboard</h1>
                 <div class="date">
@@ -216,7 +218,13 @@ if (!isset($_SESSION['admin-id'])) {
                     <a href="#">Show All</a>
                 </div>
             </div>
-            <div id="analytics-content" class="content-section" style="display: none;">analytics content
+            <div id="analytics-content" class="content-section" style="display: none;">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div>
+                    <canvas id="myChart1"></canvas>
+                </div>
             </div>
             <div id="messages-content" class="content-section" style="display: none;">Messages Content</div>
             <div id="admins-content" class="content-section" style="display: none;">Admins Content</div>
@@ -332,6 +340,48 @@ if (!isset($_SESSION['admin-id'])) {
         </div>
     </div>
     <script src="./index.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        const ctx1 = document.getElementById('myChart1');
+
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 <!-- copyright @Briankipkemoi
  CREATED AND ONWNED BY BRIAN KIPKEMOI CHERUIYOT

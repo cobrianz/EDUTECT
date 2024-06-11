@@ -114,14 +114,27 @@ h5 {
 .success {
     background: #83d487;
 }
-
-.content-section {
-    display: none;
-}
-
-.content-section.active {
-    display: block;
-}
+  
+.content-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-section {
+    display: none; /* Initially hide all sections */
+  }
+  
+  .content-section.flex-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #dashboard-content {
+    display: block; /* Ensure dashboard is block by default */
+  }
+  
+  
 
 
 small {
@@ -197,7 +210,6 @@ small {
     background: var(--color-primary-variant);
     transition: all 400ms ease-in-out;
 }
-
 
 .profile-photo {
     width: 2.8rem;
@@ -687,6 +699,10 @@ main table tbody td img:active {
 .right .sales-analytics .add-product div h3 {
     font-weight: 600;
 }
+
+
+/* ANALYTIC CONTENT */
+
 
 /* MEDIA QUERIES */
 

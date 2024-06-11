@@ -15,7 +15,14 @@ unset($_SESSION['login-data']);
     <title>EDUTECH</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+<style>
+    
+.admin-form form button:active {
+    transform: scale(.98);
+    transition: all 400ms ease-in-out;
+}
 
+</style>
 </head>
 
 
