@@ -101,40 +101,53 @@ h5 {
 }
 
 .alert__message {
-    width: 100%;
+
     padding: .5rem;
-    border-radius: 8px;
     margin-bottom: 1rem;
+    color: var(--color-dark);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 2rem;
 }
 
-.error {
-    background: #df9f9f;
-}
-
-.success {
+.alert__message.success p {
     background: #83d487;
+    border-radius: 8px;
+    padding: 1rem;
 }
-  
+
+.alert__message.error p {
+    border-radius: 8px;
+    background: #df9f9f;
+    padding: 1rem;
+
+}
+
 .content-container {
     display: flex;
     flex-direction: column;
-  }
-  
-  .content-section {
-    display: none; /* Initially hide all sections */
-  }
-  
-  .content-section.flex-section {
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.flex-section {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-  
-  #dashboard-content {
-    display: block; /* Ensure dashboard is block by default */
-  }
-  
-  
+}
+
+#dashboard-content {
+    display: block;
+}
+
+
 
 
 small {
@@ -168,7 +181,7 @@ small {
     gap: 2rem;
 }
 
-.admin-form .login img{
+.admin-form .login img {
     width: 200px;
 }
 
@@ -204,6 +217,7 @@ small {
     background: var(--color-primary);
     color: var(--color-white);
     cursor: pointer;
+    border: none;
 }
 
 .admin-form form button:hover {
@@ -458,6 +472,169 @@ main .insights small {
     display: block;
 }
 
+/* CONTACT */
+
+.admin-btn {
+    margin-left: 1.5rem;
+   
+
+    color: var(--color-info-light);
+    background: var(--color-info-dark);
+    padding: 1px 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+}
+
+.admin-btn:hover {
+    background: slateblue;
+    color: #fff;
+    transition: all 500ms ease;
+}
+
+
+.chat {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-white);
+   
+    padding: 1rem;
+    border-radius: 12px;
+    height: 60vh;
+    border: 1px solid slateblue;
+}
+
+.chat .message_close {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    color: var(--color-danger);
+    font-size: 1.2rem;
+    display: flex;
+    align-self: flex-end;
+}
+
+
+.chat h3 {
+    font-size: 18px;
+    color: slateblue;
+}
+
+.chat .content {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.content form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.content form textarea {
+    background: var(--color-info-light);
+    color: black;
+    padding: 0.5rem;
+    border-radius: 12px;
+    resize: none;
+    width: 80%;
+    gap: 1rem;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+}
+
+.content form button {
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--color-info-light);
+    color: var(--color-info-dark);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+}
+
+.content form button:hover {
+    background: slateblue;
+    color: #fff;
+    transition: all 500ms ease;
+}
+
+.chat .notifications {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    overflow-y: auto;
+    margin: 1rem;
+}
+
+.chat .notifications::-webkit-scrollbar {
+    display: none;
+}
+
+.chat .notification {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: slateblue;
+    padding: 1rem;
+    border-radius: 0 1rem 1rem 2rem;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.chat .notification.send {
+    border-radius: 1rem 0 2rem 1rem;
+    margin-left: auto;
+    margin-right: 0;
+    color: black;
+    background: var(--color-info-light);
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#message-form.active {
+    display: block;
+}
+
+
+.message_text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.message_text:active {
+    white-space: normal;
+    max-width: 400px;
+    background-color: var(--color-background);
+    padding: 10px;
+    width: 400px;
+    position: absolute;
+    border-radius: 1rem;
+    text-align: left;
+    transition: all .4s ease;
+    color: var(--color-info-dark);
+}
+
+
 /* Recent orders */
 
 main .recent-orders {
@@ -552,6 +729,224 @@ main table tbody td img:active {
 }
 
 /* end of recent */
+.charts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--color-white);
+    flex-wrap: wrap;
+}
+
+.chart {
+    width: 600px;
+    color: var(--color-white);
+}
+
+.admins {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.admin {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 6px;
+
+}
+
+
+.admin_details {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.admin_details.active {
+    display: flex;
+}
+
+.admin .admin_details span {
+    font-size: 12px;
+    color: var(--color-dark);
+
+}
+
+.admin.studentpad span {
+    font-size: 12px;
+
+}
+
+.admin img {
+    width: 3rem;
+    border-radius: 50%;
+    align-self: center;
+    border: 2px solid slateblue;
+}
+
+.admin img:active {
+    width: 400px;
+    position: absolute;
+    border-radius: 1rem;
+    transition: all 1s ease;
+    border: none;
+}
+
+.admin span {
+
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+
+.add_admin {
+    display: none;
+    width: 500px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 12px;
+    min-width: 350px;
+}
+
+.add_admin.active {
+    display: block;
+}
+
+.add_admin .message_close {
+    position: relative;
+    align-self: right;
+}
+
+.add_admin h2 {
+    width: fit-content;
+    text-align: left;
+}
+
+.add_admin form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.admin_header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.admin_header span {
+    width: 100%;
+    padding: .5rem;
+    width: fit-content;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #9c81e6, #836dc2);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.input-group label {
+    width: fit-content;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-info-dark);
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: .6rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-variant);
+    outline: none;
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+.input-group input:focus {
+    border-color: #6a5acd;
+}
+
+.form-btn {
+    width: 100%;
+    padding: .5rem;
+    width: fit-content;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #9c81e6, #836dc2);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    background: #6a5acd;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 1rem;
+    color: #474747;
+}
+
+.admin_buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 5px;
+}
+
+.admin_buttons span {
+    color: #fff;
+    border-radius: 5px;
+    padding: 1px 12px;
+    font-size: 12px;
+}
+
+.admin_buttons span:hover {
+    transform: scale(1.03);
+    transition: all .5s ease;
+}
+
+.admin_buttons span:first-child {
+    background: slateblue;
+}
+
+.admin_buttons span:last-child {
+    background: red;
+}
+
+@media only screen and (max-width: 800px) {
+    .add_admin {
+        width: 400px;
+    }
+
+}
+
 
 /* right */
 

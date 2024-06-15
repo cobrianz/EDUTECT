@@ -16,3 +16,9 @@ function toggleAside() {
     var aside = document.getElementById("courseOutline");
     aside.classList.toggle("active");
 }
+
+const navLinks = document.getElementById('nav_links');
+
+function pop() {
+    navLinks.style.display = "flex";
+}

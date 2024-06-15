@@ -12,13 +12,21 @@ if (!isset($_SESSION['user-id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduka</title>
+    <title>EDUTECH | account</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <style>
         nav {
             padding: 3rem;
 
+        }
+
+        .notifications small {
+            align-self: flex-end;
+            margin-top: 1rem;
+            color: gray;
+            font-weight: bold;
+            font-size: 9px;
         }
 
         @media only screen and (max-width: 800px) {
@@ -32,6 +40,10 @@ if (!isset($_SESSION['user-id'])) {
 
             .nav_details {
                 display: none;
+            }
+
+            .messages .content {
+                height: 90vh;
             }
         }
     </style>
@@ -82,8 +94,8 @@ if (!isset($_SESSION['user-id'])) {
                     <p>Upgrade</p>
                 </span>
                 <span class="aside__span">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <p style="text-decoration: line-through;">Courses</p>
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <p>Notifications</p>
                 </span>
                 <span class="aside__span">
                     <a href="./index.php"><i class="fa fa-sign-out" aria-hidden="true" style="color: red;"></i>
@@ -114,23 +126,113 @@ if (!isset($_SESSION['user-id'])) {
                     <?php if ($user_record['plan'] == 0): ?>
                         <h3 style="color: #6a5acd;">Basic Plan</h3>
                         <div class="plan">
+                            <?php if (isset($_SESSION['pay-success'])): ?>
+
+                                <div class="alert__message success">
+                                    <p>
+                                        <?= $_SESSION['pay-success'];
+                                        unset($_SESSION['pay-success']);
+                                        ?>
+                                    </p>
+                                </div>
+                            <?php elseif (isset($_SESSION['pay'])): ?>
+                                <div class="alert__message error">
+                                    <p>
+                                        <?= $_SESSION['pay'];
+                                        unset($_SESSION['pay']);
+                                        ?>
+                                    </p>
+                                </div>
+                            <?php endif ?>
                             <h4>Mpesa</h4>
                             <p>Ksh. 3,000</p>
-                            <form action="#">
-                                <input type="number" placeholder="Enter Amount To pay">
-                                <button type="submit" class="btn" name="">Pay</button>
+                            <form action="<?= ROOT_URL ?>pay.php" method="POST">
+                                <input type="number" name="amount" value="3000" placeholder="Enter Amount To pay">
+                                <button type="submit" class="btn" name="submit">Pay</button>
                             </form>
                         </div>
                     <?php elseif ($user_record['plan'] == 1): ?>
                         <h3 style="color: #6a5acd;">Premimum Plan</h3>
+                        <?php if (isset($_SESSION['pay-success'])): ?>
+
+                            <div class="alert__message success">
+                                <p>
+                                    <?= $_SESSION['pay-success'];
+                                    unset($_SESSION['pay-success']);
+                                    ?>
+                                </p>
+                            </div>
+                        <?php elseif (isset($_SESSION['pay'])): ?>
+                            <div class="alert__message error">
+                                <p>
+                                    <?= $_SESSION['pay'];
+                                    unset($_SESSION['pay']);
+                                    ?>
+                                </p>
+                            </div>
+                        <?php endif ?>
                         <div class="plan">
                             <h4>Mpesa</h4>
                             <p>Ksh. 3,000</p>
                             <h3>Paid</h3>
                         </div>
                     <?php endif; ?>
+                </div>
+                <div id="main" class="main">
+                    <h3 style="color: slateblue; margin-bottom: 2rem;">Notifications</h3>
+                    <?php if (isset($_SESSION['message-success'])): ?>
+
+                        <div class="alert__message success">
+                            <p>
+
+                                <?= $_SESSION['message-success'];
+                                unset($_SESSION['message-success']);
+                                ?>
+                            </p>
+                        </div>
+                    <?php elseif (isset($_SESSION['message'])): ?>
+                        <div class="alert__message error">
+                            <p>
+                                <?= $_SESSION['message'];
+                                unset($_SESSION['message']);
+                                ?>
+                            </p>
+                        </div>
+                    <?php endif ?>
+                    <div class="notifications">
+                        <?php
+                        // Fetch user data from the database
+                        $fetch_user_query = "SELECT * FROM notifications WHERE user_id = $id";
+                        $fetch_user_result = mysqli_query($connection, $fetch_user_query);
+
+                        // Convert the record into an associative array
+                        while ($user_record = mysqli_fetch_assoc($fetch_user_result)):
+
+                            ?>
+
+                            <div class="notification">
+                                <span><?php echo $user_record['reply'] ?></span>
+                                <small><?php echo $user_record['reply_time'] ?></small>
+                            </div>
+                            <div class="notification send">
+                                <span><?php echo $user_record['message_text'] ?></span>
+                                <small><?php echo $user_record['message_time'] ?></small>
+                            </div>
+
+                        <?php endwhile; ?>
                     </div>
-            <?php endif; ?>
+                    <div class="content">
+                        <form id="message-form" action="<?php ROOT_URL ?> save-message.php" method="POST">
+                            <textarea id="message" name="message" placeholder="Contact admin" required></textarea>
+                            <button type="submit" class="btn" name="">Send<i class="fa fa-share"
+                                    aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+
+
+    <?php endif; ?>
 
     </div>
     </main>
@@ -145,64 +247,46 @@ if (!isset($_SESSION['user-id'])) {
             const closeMenu = document.querySelector('.fa-times');
             const menu = document.querySelector('ul');
 
-
             // Function to remove 'active-aside__span' class from all spans
             const removeActiveClass = () => {
                 asideSpans.forEach(s => s.classList.remove('active-aside__span'));
             };
 
+            // Function to show a section by index
+            const showSection = (index) => {
+                removeActiveClass();
+                asideSpans[index].classList.add('active-aside__span');
+                mainSections.forEach((section, i) => {
+                    section.style.display = i === index ? 'block' : 'none';
+                });
+            };
+
             asideSpans.forEach((span, index) => {
                 span.addEventListener('click', () => {
-                    removeActiveClass();
-                    span.classList.add('active-aside__span');
-                    mainSections.forEach(section => section.style.display = 'none');
-                    mainSections[index].style.display = 'block';
+                    showSection(index);
+                    // Save the active section index to localStorage
+                    localStorage.setItem('activeSectionIndex', index);
                 });
             });
 
             viewOrderLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
-                    removeActiveClass();
-                    mainSections.forEach(section => section.style.display = 'none');
                     const orderDetailsIndex = mainSections.length - 1; // Assuming order details is the last section
-                    mainSections[orderDetailsIndex].style.display = 'block';
+                    showSection(orderDetailsIndex);
+                    // Save the active section index to localStorage
+                    localStorage.setItem('activeSectionIndex', orderDetailsIndex);
                 });
             });
 
-            // Set default open section (Personal Information)
-            const defaultSectionIndex = 0;
-            asideSpans[defaultSectionIndex].classList.add('active-aside__span');
-            mainSections.forEach((section, index) => {
-                section.style.display = index === defaultSectionIndex ? 'block' : 'none';
-            });
+            // Get the saved active section index from localStorage, or default to 0
+            const savedSectionIndex = localStorage.getItem('activeSectionIndex');
+            const defaultSectionIndex = savedSectionIndex !== null ? parseInt(savedSectionIndex, 10) : 0;
 
-
-            openMenu.addEventListener('click', () => {
-                menu.style.display = 'flex';
-                openMenu.style.display = 'none';
-                closeMenu.style.display = 'flex';
-
-            });
-
-            closeMenu.addEventListener('click', () => {
-                menu.style.display = 'none';
-                openMenu.style.display = 'flex';
-                closeMenu.style.display = 'none';
-
-            });
-
-            //Shop aside javascript
-
-            const asideToggler = document.querySelector('.aside__toggler');
-            const aside = document.querySelector('.shop__aside');
-
-            asideToggler.addEventListener('click', () => {
-                aside.classList.toggle('shop__aside-active');
-            });
-            ;
-
+            // Show the saved or default section
+            showSection(defaultSectionIndex);
         });
+
     </script>
 </body>
 

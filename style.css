@@ -10,10 +10,12 @@
 }
 
 .alert__message {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     padding: .5rem;
     border-radius: 8px;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .error {
@@ -782,8 +784,109 @@ label {
     background: #a68af5;
 }
 
+/* CONTACT */
 
 
+
+.messages .content {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 10rem;   
+}
+
+#message-form {
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+#message-form textarea {
+    resize: none;
+    width: 450px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #d5e0ee;
+    padding: .5rem;
+    margin: 1rem;
+}
+
+#message-form textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#message-form button {
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #d5e0ee;
+    padding: .8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; 
+    align-items: center;
+     gap: 10px;
+     color: #6a5acd;
+}
+
+#message-form button:hover {
+    background-color: #6a5acd;
+    color: #fff;
+    transition: all 400ms ease;
+}
+
+.notifications {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+    height: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 1px;
+    border-radius: 8px;
+}
+
+.notifications::-webkit-scrollbar {
+    display: none;
+}
+
+.notification {
+    width: fit-content;
+    max-width: 480px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #d1d7de;
+    padding: 1rem;
+    letter-spacing: 1.2px;
+    font-size: .8rem;
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 0 1rem 1rem 2rem;
+    margin-top: 12px;
+
+}
+
+.send {
+    margin-left: auto;
+    margin-right: 0;
+    background: #6a5acd;
+    width: 80%;
+    color: #fff;
+    border-radius: 3rem 0 2rem 3rem;
+    margin-top: 12px;
+}
+
+.send small {
+    color: #fff;
+}
 
 /* LEARN SECTION */
 
@@ -970,6 +1073,8 @@ video {
 #courseOutline.active {
     display: block;
 }
+
+
 
 
 @media only screen and (max-width: 1000px) {

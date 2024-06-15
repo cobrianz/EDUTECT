@@ -1,3 +1,8 @@
+<?php
+require 'config/database.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +12,40 @@
     <title>EDUTECH</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <style>
+        .nav_user-profile {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .nav_user-profile .profile_image {
+            cursor: pointer;
+        }
 
+        .nav_user-profile  span {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.2rem;
+            position: absolute;
+            background: white;
+            padding: 1rem;
+            right: 2vw;
+            top: 9rem;
+            border-radius: 5px; 
+            }
+
+            
+            .nav_user-profile  span a {
+            color: #000;
+
+        }
+
+        .nav_user-profile  span a:hover {
+            color: gray;
+            transition: all 0.5s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,13 +68,33 @@
                         <span><i class="fa fa-circle" aria-hidden="true"></i></span>
                         <a href="#about">About us</a>
                     </div>
-
+                    <?php
+                    if (!isset($_SESSION['user-id'])):
+                    ?>
                     <div class="nav__right">
                         <div class="user">
                             <a href="./login.php"><span><i class="fa fa-user-o" aria-hidden="true"></i></span></a>
                         </div>
                         <div><i class="fa fa-code" aria-hidden="true"></i></div>
                     </div>
+                    <?php elseif (isset($_SESSION['user-id'])):
+                    $id = $_SESSION['user-id'];
+                    $fetch_user_query = "SELECT * FROM users WHERE id = '$id'";
+                    $run_query = mysqli_query($connection, $fetch_user_query);
+                    $user_record = mysqli_fetch_assoc($run_query); ?>
+                        
+                    <div class="nav_user-profile">
+    
+
+                            <img src="profiles/<?php echo $user_record['avatar'] ?> " class="profile_image" onclick="pop()" alt="">
+                            <span id="nav_links">
+                            <a href="<?=ROOT_URL ?>account.php" onclick="close()">Account</a>
+                            <a href="<?=ROOT_URL ?>logout.php" onclick="close()">Logout</a>
+
+                            </span>
+                    
+                    </div>
+                    <?php endif; ?>
                 </div>
             </nav>
         </div>
@@ -193,7 +251,17 @@
             <a href="./terms.php">Privacy Policy</a>
         </div>
     </div>
+<script>
+    const navLinks = document.getElementById('nav_links');
 
+function pop() {
+    navLinks.style.display = "flex";
+}
+
+function close() {
+    navLinks.style.display = "none";
+}
+</script>
     <script src="./app.js"></script>
 </body>
 
