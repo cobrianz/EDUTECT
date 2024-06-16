@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggler.querySelector("span:nth-child(2)").classList.remove("active");
   }
 });
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const links = document.querySelectorAll('.sidebar a');
   const sections = document.querySelectorAll('.content-section');
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   links.forEach((link, index) => {
     if (index === links.length - 1) return; // Skip the last link
 
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
 
       // Remove 'active' class from all links
@@ -112,33 +112,95 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const messageForm = document.getElementById('message-form');
+const message = document.getElementById('message');
 
 function pop(userId) {
-    if (userId) {
-        document.getElementById('user_id').value = userId;
-        messageForm.classList.add('active');
-    } else {
-        messageForm.classList.remove('active');
-        messageForm.reset();
-    }
+  if (userId) {
+    document.getElementById('user_id').value = userId;
+    messageForm.classList.toggle('active');
+    message.classList.toggle('active');
+  } else {
+    messageForm.reset();
+  }
+
+
 }
+
 
 const adminForm = document.getElementById('formContainer');
 const adminDetails = document.getElementById('admin_details');
 const admin = document.getElementById('addAdmin');
 
-function popform(){
+function popform() {
   adminForm.classList.remove('active');
   addAdmin.reset();
-  }
-  
-  function addAdmin(){
+}
+
+function addAdmin() {
   adminForm.classList.toggle('active');
 
 }
 
-function ShowAdmin(){
+function ShowAdmin() {
   adminDetails.classList.toggle('active');
+}
+    function editAdminForm(admin_id, admin_name) {
+        // Populate form fields
+        document.getElementById('admin_id').value = admin_id;
+        document.getElementById('admin_name').innerText = admin_name; // Set admin name in <h2> tag
+
+        // Show the edit admin form (you might have a modal or show/hide logic)
+        // Example: $('#edit_admin').show(); // If using jQuery
+
+  // Show the edit admin section
+  document.getElementById('edit_admin').classList.toggle('active');
+}
+
+function addStudentForm() {
+  document.getElementById('add_student').classList.toggle('active');
 }
 
 
+
+
+function deleteAdminForm(admin_id, admin_name) {
+  // Populate admin ID in the form
+  document.getElementById('admin_id').value = admin_id;
+
+  // Set dynamic title in the delete confirmation dialog
+  document.getElementById('delete_admin_title').innerText = "Delete Admin " + admin_name;
+
+  // Set admin name in the confirmation message
+  document.getElementById('admin_name_to_delete').innerText = admin_name;
+
+  // Show the delete admin form
+  document.getElementById('delete_admin').classList.toggle('active'); 
+}
+
+function updateConfirmDelete() {
+  var selectBox = document.getElementById("confirm_delete_select");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  document.getElementById("confirm_delete").value = selectedValue;
+}
+
+function editStudentForm(student_id, student_name, student_email) {
+  document.getElementById('edit_student_id').value = student_id;
+  document.getElementById('edit_name').value = student_name;
+  document.getElementById('edit_email').value = student_email; // You can fetch and set email if needed
+  // Show edit student form
+  document.getElementById('edit_student').classList.toggle('active');
+    // Optionally, scroll to the form or focus on the first input field
+}
+
+function deleteStudentForm(student_id, student_name) {
+  document.getElementById('delete_student_id').value = student_id;
+  document.getElementById('student_name_to_delete').innerText = student_name;
+  // Show delete student form
+  document.getElementById('delete_student').classList.toggle('active');
+}
+
+function updateConfirmDelete() {
+  var selectBox = document.getElementById("confirm_delete_select");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  document.getElementById("confirm_delete").value = selectedValue;
+}

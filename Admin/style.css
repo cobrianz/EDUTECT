@@ -104,7 +104,7 @@ h5 {
 
     padding: .5rem;
     margin-bottom: 1rem;
-    color: var(--color-dark);
+    color: #000;
     width: 100%;
     display: flex;
     align-items: center;
@@ -474,50 +474,20 @@ main .insights small {
 
 /* CONTACT */
 
-.admin-btn {
-    margin-left: 1.5rem;
-   
-
-    color: var(--color-info-light);
-    background: var(--color-info-dark);
-    padding: 1px 12px;
-    border-radius: 12px;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
-}
-
-.admin-btn:hover {
-    background: slateblue;
-    color: #fff;
-    transition: all 500ms ease;
-}
-
-
 .chat {
-    width: 500px;
-    display: flex;
+    width: 100%;
+    display: none;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: var(--color-white);
-   
     padding: 1rem;
-    border-radius: 12px;
     height: 60vh;
-    border: 1px solid slateblue;
+    height: inherit;
+    border-radius: 0 5px 5px 0;
 }
 
-.chat .message_close {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: 0;
-    color: var(--color-danger);
-    font-size: 1.2rem;
+.chat.active {
     display: flex;
-    align-self: flex-end;
 }
-
 
 .chat h3 {
     font-size: 18px;
@@ -542,9 +512,9 @@ main .insights small {
     padding: 0.5rem;
     border-radius: 12px;
     resize: none;
-    width: 80%;
+    width: 90%;
     gap: 1rem;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 2px 0 #00000033;
 }
 
 .content form button {
@@ -557,7 +527,7 @@ main .insights small {
     color: var(--color-info-dark);
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 2px 0 #00000033;
 }
 
 .content form button:hover {
@@ -573,6 +543,7 @@ main .insights small {
     color: white;
     overflow-y: auto;
     margin: 1rem;
+    gap: 5px;
 }
 
 .chat .notifications::-webkit-scrollbar {
@@ -590,12 +561,14 @@ main .insights small {
     margin-left: 0;
     width: fit-content;
     max-width: 80%;
+    margin-top: 5px;
 }
 
 .chat .notification.send {
     border-radius: 1rem 0 2rem 1rem;
     margin-left: auto;
     margin-right: 0;
+    margin-top: 5px;
     color: black;
     background: var(--color-info-light);
 }
@@ -604,36 +577,76 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
+.messages{
+    display: flex;
+    gap: 1rem;
+    background: var(--color-white);
+    border-radius: 5px;
+    justify-content: space-between;
+    border: 1px solid slateblue;
+    border-left: none;
+}
+.message_aside {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 85vh;
+    overflow-y: auto;
+    border-right: 2px solid var(--color-info-light);
+}
+
+.message_aside::-webkit-scrollbar {
+    display: none;
+}
+
+.user_message {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--color-white);
+    padding: .5rem;
+    border-bottom: 1px solid slateblue;
+}
+
+.user_message.active {
+    background: #6a5acd;
+    color: #fff;
+}
+
+.user_message.active p{
+    color: #fff;
+}
+
+.user_message img {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.user_message span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user_message span p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    color: var(--color-dark);
+}
+
+.user_message span small {
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 0;
+}
 
 .hidden {
     display: none;
 }
-
-#message-form.active {
-    display: block;
-}
-
-
-.message_text {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 100px;
-}
-
-.message_text:active {
-    white-space: normal;
-    max-width: 400px;
-    background-color: var(--color-background);
-    padding: 10px;
-    width: 400px;
-    position: absolute;
-    border-radius: 1rem;
-    text-align: left;
-    transition: all .4s ease;
-    color: var(--color-info-dark);
-}
-
 
 /* Recent orders */
 
@@ -764,6 +777,7 @@ main table tbody td img:active {
     background: var(--color-white);
     padding: 1.5rem;
     border-radius: 6px;
+    border: 1px solid var(--color-primary);
 
 }
 
@@ -775,7 +789,11 @@ main table tbody td img:active {
 
 }
 
-.admin_details.active {
+ .admin_details.active,
+  .delete_student.active,
+   .edit_admin.active
+   .edit_admin.active 
+   .add_student.active{
     display: flex;
 }
 
@@ -823,6 +841,7 @@ main table tbody td img:active {
     padding: 2rem;
     border-radius: 12px;
     min-width: 350px;
+    border: 1px solid var(--color-primary);
 }
 
 .add_admin.active {
@@ -879,7 +898,7 @@ main table tbody td img:active {
     width: 100%;
     padding: .6rem;
     border-radius: 5px;
-    border: 1px solid var(--color-dark-variant);
+    border: 1px solid var(--color-primary);
     outline: none;
     background: var(--color-white);
     color: var(--color-dark);
@@ -933,11 +952,11 @@ main table tbody td img:active {
 }
 
 .admin_buttons span:first-child {
-    background: slateblue;
+    background: #beb7f0;
 }
 
 .admin_buttons span:last-child {
-    background: red;
+    background: #f1a1a1;
 }
 
 @media only screen and (max-width: 800px) {
